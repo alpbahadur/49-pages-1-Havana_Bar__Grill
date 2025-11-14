@@ -23,7 +23,28 @@
         }
 
         /* Ensure content appears above animated background */
-        section, nav, footer {
+        nav {
+            position: fixed;
+            z-index: 50;
+        }
+
+        section {
+            position: relative;
+            /* No z-index here - allows animations to show through transparent backgrounds */
+        }
+
+        /* Make section content appear above animations */
+        section > * {
+            position: relative;
+            z-index: 10;
+        }
+
+        footer {
+            position: relative;
+            /* No z-index here - allows animations to show through transparent backgrounds */
+        }
+
+        footer > * {
             position: relative;
             z-index: 10;
         }
